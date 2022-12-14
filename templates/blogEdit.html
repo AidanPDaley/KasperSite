@@ -1,0 +1,25 @@
+{% extends "blog.html" %}
+
+{% block edit %}
+    <div class = "bg-white mb-3">
+        <a href = "{% url 'editPost' post.id %}" class = "btn btn-primary mx-1">Edit</a>
+        <a href = "{% url 'deletePost' post.id %}" class = "btn btn-danger mx-1">Delete</a>
+    </div>
+{% endblock %}
+
+{% block edit2 %}
+    <div class = "bg-white mb-3">
+        <a href = "{% url 'editPost' post.id %}" class = "btn btn-primary mx-1">Edit</a>
+        <a href = "{% url 'deletePost' post.id %}" class = "btn btn-danger mx-1">Delete</a>
+    </div>
+{% endblock %}
+
+{% block add %}
+    <div class = "my-3">
+        <a href = "/blogEdit/add/" class = "btn btn-primary mx-1">Add A Post</a>
+    </div>
+{% endblock %}
+
+
+
+<!-- {% url 'blogEdit/delete' task.id %} {% url 'blogEdit/edit' task.id %} -->

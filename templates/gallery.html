@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1 class = "mt-5 d-flex contactTitle justify-content-center">The Gallery</h1>
+    <div class = "container">
+        <div class = "row mt-5">
+
+        {% for photo in photos %}
+            <div class="col-md-3 mb-3">
+                <a href="{{photo.image.url}}">
+                    <img src="{{photo.image.url}}" alt = "..." style="width:100%">
+                </a>
+            </div>
+        {% empty %}
+            <br/><br/><br/><br/>
+            <h3 class = "p-3 d-flex contactTitle justify-content-center">The Gallery is Empty!</h3>
+            <p class = "d-flex justify-content-center">Come Back Later to see my Updated Photos!</p>
+        {% endfor %}
+        </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+{% endblock %}

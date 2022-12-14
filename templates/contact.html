@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class = "container d-flex justify-content-center">
+
+        <form action = "" method = "POST">
+            {% csrf_token %}
+            {% if booked %}
+                <br/><br/><br/><br/>
+                <h3 class = "p-3 d-flex contactTitle justify-content-center">You've Submitted Your Request!</h3>
+                <p class = "d-flex justify-content-center">I'll contact you in a couple days to confirm your appointment.</p>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            {% else %}
+                <h1 class = "p-5 pb-3 contactTitle">Book Your Next Photoshoot!</h1>
+                {{ form.as_p }}
+                <input type = "Submit" value="Submit" class = "btn btn-success mb-5">
+            {% endif %}
+
+        </form>
+    </div>
+{% endblock %}

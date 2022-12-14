@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "container p-5 justified-center align-middle">
+      <div class = "rounded-3 border-light shadow">
+        <div class = "p-3 pb-2 border" style="background-color: #fafafa">
+                <h4>{% block title %}Write Your Next Blog Post{% endblock %}</h4>
+        </div>
+        <div class = "p-3 pt-0 border bg-white justified-center">
+        <br>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {%  csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" value={% block buttonName %}"Publish"{% endblock %} class = "btn btn-primary">
+
+            </form>
+        </div>
+      </div>
+    <a href = "/blogEdit" class = "btn btn-warning text-decoration-none mt-3">
+        {% block text %}Go Back{% endblock %}</a>
+    </div>
+{% endblock %}

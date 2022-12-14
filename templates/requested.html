@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "container">
+        {% for app in appointments %}
+                <div class = "row shadow rounded bg-white my-3">
+                    <div class = "bg-white p-3 my-1 col-lg-8">
+                        <h2 class = "pt-3">{{app.name}}'s Appointment</h2>
+                        <p>Phone Number: {{ app.phoneNumber }}</p>
+                        <p>Email: {{ app.email }}</p>
+                        {% if app.dateRangeHigh == "" %}
+                            <p>Date:{{ app.dateRangeLow }}</p>
+                        {% else %}
+                            <p>Availability: {{ app.dateRangeLow }} to {{ app.dateRangeHigh }}</p>
+                        {% endif %}
+                        <p>{{ app.location }}</p>
+                        <p>{{ app.info }}</p>
+                    </div>
+                </div>
+        {% empty %}
+            <br/><br/><br/><br/>
+            <h3 class = "p-3 d-flex contactTitle justify-content-center">No Appointment Requests</h3>
+        {% endfor %}
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = "container">
+        {% for post in blogposts %}
+                {% if post.image %}
+                    <div class = "row shadow rounded bg-white my-3">
+                        <div class = "bg-white p-3 my-1 col-lg-8">
+                            <h2 class = "pt-3">{{post.title}}</h2>
+                            <p><small>Time: {{post.createdAt}}</small></p>
+                            <p>{{ post.blogText }}</p>
+                        </div>
+                        <img class= "col-lg-4 p-4" src="{{ post.image.url }}" alt="...">
+                        {% block edit %}
+                        {% endblock %}
+                    </div>
+                {% else %}
+                    <div class = "row shadow rounded bg-white my-3">
+                        <div class = "bg-white px-3 my-1">
+                            <h2 class = "pt-3">{{post.title}}</h2>
+                            <p><small>Time: {{post.createdAt}}</small></p>
+                            <p>{{ post.blogText }}</p>
+                        </div>
+                        {% block edit2 %}
+                        {% endblock %}
+                    </div>
+                {% endif %}
+        {% empty %}
+            <br/><br/><br/><br/>
+            <h3 class = "p-3 d-flex contact Title justify-content-center">No Blog Posts Yet</h3>
+            <p class = "d-flex justify-content-center">Come Back later to see what I post!</p>
+        {% endfor %}
+        {% block add %}
+        {% endblock %}
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+{% endblock %}

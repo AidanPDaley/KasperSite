@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <!-- About Me Preview -->
+    <div class = "pt-5">
+        <div class = "container border-light pt-5 rounded-1">
+            <div class = "row pb-5 align-items-center d-flex justify-content-center">
+                <img class="col-lg-4 m-4 mt-0" src="{% static 'photos/aboutMe3.JPG' %}" alt="..."/>
+                <div class = "col-lg ms-3">
+                    <h1 class = "fw-bold text-dark text-opacity-75 aboutMeTitle">About Me!</h1>
+                    <p class = "lead cardBio">Hi! My name is Lauren. Welcome to my photography website! I am a Connecticut based personal photographer. I’ve been a professional photographer for over 5 years now, but I’ve had a camera in my hands my entire life. My mom is a photographer, and I spent my childhood with a camera constantly in my face. Eventually, I picked up the camera and it was love at first click! Originally, I only shared my passion with my close friends and family members. Now, I want to share my passion with you! </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photography In Connecticut-->
+        <div class = "container border-light pt-5 rounded-1">
+            <div class = "row pb-5 align-items-center d-flex justify-content-center">
+                <div class = "col-lg ms-3">
+                    <h1 class = "fw-bold text-dark text-opacity-75 aboutMeTitle">Photography In Connecticut</h1>
+                    <p class = "lead cardBio">I’ve spent my whole life in Connecticut, and that has allowed me to go all over the state hunting for new locations. My favorite spot to shoot is the classic Rocky Neck State Park. Take a look at the gallery to see my work there! I love the variety available there, and nothing can beat the sunset in the summer. In the future, I hope to branch out into photography in Massachusetts.</p>
+                </div>
+                <img class="col-lg-4 m-4 mt-0" src="{% static 'photos/AboutMe.JPG' %}" alt="..."/>
+            </div>
+        </div>
+
+        <!-- My Experience -->
+        <div class = "container border-light pt-5 rounded-1">
+            <div class = "row pb-5 align-items-center d-flex justify-content-center">
+                <img class="col-lg-4 m-4 mt-0" src="{% static 'photos/aboutMe4.JPG' %}" alt="..."/>
+                <div class = "col-lg ms-3">
+                    <h1 class = "fw-bold text-dark text-opacity-75 aboutMeTitle">Experience</h1>
+                    <p class = "lead cardBio">I’ve been a professional photographer for over 5 years now. In that time, I’ve had dozens of clients. I’ve done everything from Instagram Photoshoots, to Graduations, to Professional Headshots. Over the last two years, I’ve also been the official historian and photographer for Hofstra University’s Sorority Alpha Epsilon Phi. While in this position, I was in charge of the sorority's social media campaigns alongside documenting all their amazing events. Let me know what I can do for you!</p>
+                    <a href = "/contact" class = "btn text-decoration-none" id="about">Book A Shoot!</a>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

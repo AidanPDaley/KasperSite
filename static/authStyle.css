@@ -1,0 +1,19 @@
+body {
+    background-color: #0a2f04;
+}
+
+.Title {
+    color: #0a2f04;
+    font-family: 'Pinyon Script', cursive;
+    align-content: center;
+    text-decoration: none;
+}
+
+.mess {
+    color: white;
+    background-color:#FFA69C;
+}
+
+.successful {
+    background-color: #48FFA6;
+}

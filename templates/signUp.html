@@ -1,0 +1,29 @@
+{% extends 'login.html' %}
+<body>
+    {% block title %} Sign Up {% endblock %}
+    {% block form %}
+        <form method="POST" action = "">
+            {% csrf_token %}
+            <input type = "text" name="first_name" placeholder="First Name" class="form-control mt-1">
+            <input type = "text" name="last_name" placeholder="Last Name" class="form-control mt-1">
+            <input type = "text" name="username" placeholder="Username" class="form-control mt-1">
+            <input type = "text" name="Email" placeholder="email" class="form-control mt-1">
+            <input type = "password" name="password1" placeholder="Password" class="form-control mt-1">
+            <input type = "password" name="password2" placeholder="Confirm Password" class="form-control mt-1">
+            <input type="submit" name="Create User" value = "Sign Up" class="mt-1 btn btn-primary">
+        </form>
+        <div class = "mt-3"></div>
+        {% for error in form.errors %}
+            {% if "password" in error %}
+                <p class = "px-2 py-2 mess">Password too weak or doesn't match. Try Again</p>
+            {% else %}
+                <p class = "px-2 py-2 mess">Missing Information. Try Again</p>
+            {% endif %}
+        {% empty %}
+            <div></div>
+        {% endfor %}
+    {% endblock %}
+    {% block auth %}<p>Already Have an Account? <a href="/login">Log In Here!</a></p>{% endblock %}
+</body>
+</html>
+

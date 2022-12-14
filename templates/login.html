@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'authStyle.css' %}">
+{% endblock %}
+
+{% block body %}
+<body>
+
+    <div class = "container bg-white shadow rounded justify-align-center mt-5 p-5">
+        <div class = "bg-white">
+            <h1 class = "Title display-1"> Lauren Kasper Photos</h1>
+            <h4>{% block title %}Login{% endblock %}</h4>
+        </div>
+        {% block form %}
+        <form method = "POST" action = "">
+            {% csrf_token %}
+            <input type = "text" name="username" placeholder="Username" class="form-control mt-1">
+            <input type = "password" name="password" placeholder="Password" class="form-control mt-1">
+            <input type="submit" value="Login" class="btn btn-primary my-1 color-white">
+        </form>
+
+        {% endblock %}
+
+            {% for m in messages %}
+                {% if "Congrats" in m %}
+                    <p class = "successful px-1 py-2">{{ m }}</p>
+                {% else %}
+                    <p class = "mess px-1 py-2">{{ m }}</p>
+                {% endif %}
+            {% empty %}
+                <div></div>
+            {% endfor %}
+        {% block auth %}<p>Don't have an account? <a href="/sign-up">Sign Up Here!</a></p>{% endblock %}
+    </div>
+
+</body>
+{% endblock %}

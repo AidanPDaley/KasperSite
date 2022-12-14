@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Welcome Photos-->
+    <!-- Welcome Photo fades to new picture every few seconds -->
+    <img class = "img-fluid" id = "homeImage" src="/Media/home/home1.JPG" alt="..."/>
+
+
+    <!-- About Me Preview -->
+    <div class = "pt-5">
+        <div class = "container border-light pt-5 rounded-1">
+            <hr class="Solid px-5 pt-5" id="lineBreak">
+            <div class = "row pb-5 align-items-center d-flex justify-content-center">
+                <img class="col-lg-4 m-4 mt-0" src="{% static 'photos/Profile.JPG' %}" id="aboutPic" alt="..."/>
+                <div class = "col-lg ms-3">
+                    <h1 class = "fw-bold text-dark text-opacity-75" id="aboutMeTitle">About Me!</h1>
+                    <p class = "lead cardBio">Hi! My name is Lauren. Welcome to my photography website! I am a Connecticut based personal photographer. I’ve been a professional photographer for over 5 years now, but I’ve had a camera in my hands my entire life. My mom is a photographer, and I spent my childhood with a camera constantly in my face. Eventually, I picked up the camera and it was love at first click! Originally, I only shared my passion with my close friends and family members. Now, I want to share my passion with you! </p>
+                    <a href = "./aboutMe" class = "btn text-decoration-none" id="about">More About Me!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Cards: Portraits, Events, Groups -->
+
+    <div class = "container justify-content-center pt-5">
+    <a href = "/gallery" class = "d-flex justify-content-center display-5 mb-4" id="myGallery">My Portfolio</a>
+
+	<div class = "row">
+        <div class = "card m-2 col-lg">
+			<img src="{% static 'photos/Portrait.JPG' %}" class="card-img-top pt-3" alt="...">
+			<div class="card-body">
+			    <h2 class="card-title pt-4">Portraits</h2>
+			    <div class="card-text">
+                    <p class="lead cardBio">You are beautiful, and you deserve to feel that way. I’ve always been fascinated in what can be shown in a single glance. Let me show you how beautiful you are to everyone else. Whether these are for you, or someone special in your life, I want to be there to help you capture it.</p>
+			    </div>
+			</div>
+		</div>
+        <div class = "card m-2 col-lg">
+			<img src="{% static 'photos/Events.JPG' %}" class="card-img-top pt-3" alt="...">
+			<div class="card-body">
+			    <h2 class="card-title pt-4">Events</h2>
+			    <div class="card-text">
+                    <p class="lead cardBio">Special days only come around once in a while in your life, and I want to be there to help you capture the moment. Whether it’s your birthday, wedding or graduation, you deserve to have pictures to look back on years from now.</p>
+
+			    </div>
+			</div>
+		</div>
+        <div class = "card m-2 col-lg">
+			<img src="{% static 'photos/Group.JPG' %}" class="card-img-top pt-3" alt="...">
+			<div class="card-body">
+			    <h2 class="card-title pt-4">Groups</h2>
+			    <div class="card-text">
+                    <p class="lead cardBio">Like everything in life, it’s better to share it with someone you love. To me, nothing is more important than people in my life. Take the time to capture the moments you spend together so you can look back at them for years to come. </p>
+			    </div>
+			</div>
+		</div>
+    </div>
+        <div class = "container">
+            <h1 class = "justify-content-center pt-5">"My first call whenever I need a photographer. I'll go back to her again and again."</h1>
+            <h3 class = "justify-content-center px-5 pb-5">-Annin D.</h3>
+        </div>
+    </div>
+
+
+{% endblock %}
